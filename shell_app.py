@@ -17,7 +17,3 @@ class User(db.Model):
     complete_registration = db.Column(db.Boolean, default=False)
     password = db.Column(db.String(16))
     purchase_id = db.Column(db.Integer)
-
-
-if __name__ == "__main__":
-    app.run()
