@@ -1,6 +1,11 @@
-from flask import render_template, session, redirect, url_for
+from flask import render_template, session, redirect, url_for, request
 from ..main import main
 import json
+from .forms import MainForm
+from ..models import User
+from app import db
+import time
+
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
@@ -17,9 +22,20 @@ def purchaseid():
     return render_template('purchaseid.html')
 
 
+@main.route('/purchase/form')
+def purchase_form():
+    form = MainForm()
+    return render_template('sign_up_form.html', form=form)
+
+
 @main.route('/contactus')
 def contactus():
     return render_template('contactus.html')
+
+
+@main.route('/query/form')
+def contact_form():
+    return render_template('')
 
 
 @main.route('/howitwork')
@@ -77,12 +93,34 @@ def notfound():
     return render_template('404.html')
 
 
-@main.route('/base')
+@main.route('/base', methods=['GET', 'POST'])
 def base():
-    return render_template('extends.html')
+    form = MainForm()
+    if request.method == 'GET':
+        return render_template('extends.html', form=form)
+    if request.method == 'POST':
+        print(form.errors)
+        if form.is_submitted():
+            print("submitted")
+        if form.validate():
+            print('validated')
+            u = User()
+            u.name = form.name.data
+            u.email_id = form.email.data
+            u.mob_no = form.number.data
+            u.password = form.password.data
+            u.complete_registration = False
+            u.gender = form.gender.data
+            u.pincode = form.pincode.data
+            u.timestamp = time.time()
+            db.session.add(u)
+            #db.session.commit()
+            u = User.query.all()
+            return render_template('extends2.html', u=u)
+        else:
+            print('something is wrong')
 
 
 def bitcoin_value():
     url = "http://api.coindesk.com/v1/bpi/currentprice.json"
     json.loads(url)
-    

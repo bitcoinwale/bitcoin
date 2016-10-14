@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+</head>
+<body>
+{% for i in u %}
+{{i.name}}
+<br>
+{{i.email_id}}
+<br>
+{{i.mob_no}}
+<br>
+{{i.user_id}}
+<br>
+{{i.password}}
+<br>
+{{i.gender}}
+<br>
+{{ u.pincode }}
+<br>
+{{ u.timestamp }}
+<br><br>
+{% endfor %}
+
+</body>
+</html>

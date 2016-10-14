@@ -1,3 +1,18 @@
 {% extends 'Base.html' %}
 
 {% block title %}{{super()}} extending buyucoin {% endblock %}
+{% block body%}
+<form action="{{url_for('main.base')}}" method="POST">
+    {{ form.csrf_token }}
+    {{ form.name.label }} {{ form.name() }}
+    {{ form.email.label }} {{ form.email() }}
+    {{ form.number.label }} {{ form.number() }}
+    {{ form.password.label }} {{ form.password() }}
+    {{ form.password_confirm.label }} {{ form.password_confirm() }}
+    {{ form.gender.label }} {{ form.gender }}
+    {{ form.terms.label }} {{ form.terms() }}
+    {{ form.text.label }} {{ form.text(**{ 'maxlength': '20'}) }}
+
+    {{ form.submit() }}
+</form>
+{% endblock %}
