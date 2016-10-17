@@ -159,18 +159,20 @@ div.thumbnail .glyphicon-ok-circle{
 
 <!-- ----------------------------------------------- -->
 <div class="container jf-form">
-<form data-licenseKey="" name="jqueryform-c5d7d0" id="jqueryform-c5d7d0" action='admin.php' method='post' enctype='multipart/form-data' novalidate autocomplete="on">
+<form data-licenseKey="" name="jqueryform-c5d7d0" id="jqueryform-c5d7d0" action="{{url_for('main.contact_form')}}" method='POST' enctype='multipart/form-data' novalidate autocomplete="on">
 <input type="hidden" name="method" value="validateForm">
 <input type="hidden" id="serverValidationFields" name="serverValidationFields" value="">
+{{ form.csrf_token }}
 
 
 
 <div class="form-group c1 required" data-cid="c1">
-  <label class="control-label" for="c1">Your Name</label>
+{{ form.name.label(**{'class': 'control-label', 'for': "c1"}) }}
 
 <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-user"></i> </span>
-<input type="text" class="form-control" id="c1" name="c1" value=""   placeholder="Write your name here"
-    data-rule-required="true"  />
+
+    {{ form.name(**{'class': 'form-control', 'id': "c1",  'aria-describedby': "c1-help-block", 'placeholder': "Write your name here", 'data-rule-required':"true"}) }}
+
 </div>
 
 
@@ -180,13 +182,13 @@ div.thumbnail .glyphicon-ok-circle{
 
 
 <div class="form-group c2 required" data-cid="c2">
-  <label class="control-label" for="c2">Email</label>
+{{ form.email.label(**{'class': 'control-label', 'for': 'c2'}) }}
 
-<div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-envelope"></i> </span>
-<input type="email" class="form-control" id="c2" name="c2" value=""  placeholder="Write your email here"
-    data-rule-email="true"
-    data-rule-required="true"  />
-</div>
+  <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-envelope"></i> </span>
+{{ form.email(**{'class': "form-control", 'id': "c2", 'aria-describedby': "c2-help-block",
+    'placeholder': "Write your email here", 'data-rule-email':"true", 'data-rule-required':"true"} ) }}
+
+  </div>
 
 </div>
 
@@ -194,13 +196,14 @@ div.thumbnail .glyphicon-ok-circle{
 
 
 <div class="form-group c29 required" data-cid="c29">
-  <label class="control-label" for="c29">Phone</label>
+{{ form.number.label(**{'class': 'control-label', 'for': 'c29'}) }}
 
 <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-earphone"></i> </span>
-<input type="tel" class="form-control phonelib" id="c29" name="c29" value=""   placeholder="xxx-xxx-xxxx"
-    data-rule-phonenumber="true"
-    data-rule-required="true"    data-initialcountry="" data-preferredcountries="" data-onlycountries="in"/><input type='hidden' name='c29_phonelib_dialcode' id='c29_phonelib_dialcode' value='' /></div>
 
+  {{ form.number(**{'class': "form-control phonelib", 'id': "c29", 'data-preferredcountries': "", 'aria-describedby': "c2-help-block",
+  'data-onlycountries':"in", 'data-initialcountry':"", 'placeholder': "xxx-xxx-xxxx", 'data-rule-phonenumber':"true", 'data-rule-required':"true" }) }}
+
+  <input type='hidden' name='c29_phonelib_dialcode' id='c29_phonelib_dialcode' value='' /></div>
 
 </div>
 
@@ -208,29 +211,27 @@ div.thumbnail .glyphicon-ok-circle{
 
 
 <div class="form-group c3 required" data-cid="c3">
-  <label class="control-label" for="c3">Your Query</label>
+{{ form.query.label(**{'class': 'control-label', 'for': 'c3'}) }}
+
 
 <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-edit"></i> </span>
-<textarea class="form-control" id="c3" name="c3" rows="3"  placeholder="Write your query here."
-    data-rule-required="true"
-    ></textarea>
+  {{ form.query(**{'class': "form-control",'maxlength':'160', 'id': "c3", 'placeholder': "Write your Query in less than 160 letters.", 'data-rule-required': "true"}) }}
+</div>
+
+<div class="form-group c3 required" data-cid="c3">
+{{ form.description.label(**{'class': 'control-label', 'for': 'c4'}) }}
+
+<div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-edit"></i> </span>
+  {{ form.description(**{'class': "form-control", 'id': "c3", 'rows':3, 'placeholder': "Write your description of Query in less than 520 letters.", 'maxlength':'520', 'data-rule-required': "true"}) }}
+</div>
+
+
 </div>
   <div class='form-group recaptcha'>
-  <script type="text/javascript">
-  	function renderReCaptcha(){
-  		var jfKey = '6Ldh_QkTAAAAAA1WdrF09PX4bYuZklOKqzAZ916H', // when form loaded from jqueryform.com
-  		realKey = '6Le3_iMTAAAAAHBy7Y3eNiFrLzUl7dNqU4gP0_HD',
-  		theme = 'light',
-  		key = -1 !== location.href.indexOf('jqueryform.com/') ? jfKey : realKey;
-  		grecaptcha.render( document.getElementById('g-recaptcha'), {
-          'sitekey' : key,
-          'theme' : theme
-        });
-  	};
-  </script>
-  <script src="https://www.google.com/recaptcha/api.js?hl=&onload=renderReCaptcha&render=explicit" async defer></script>
+  {{ form.recaptcha() }}
   <div id='g-recaptcha' class='g-recaptcha col_field' data-theme='light' data-sitekey='6Le3_iMTAAAAAHBy7Y3eNiFrLzUl7dNqU4gP0_HD'></div>
-</div>
+
+  </div>
   <button type="submit" class="btn btn-primary btn-lg" style="z-index: 1;">
   		Send your query
   </button>

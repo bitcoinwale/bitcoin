@@ -7,15 +7,13 @@
 		<meta name="description" content="Contact buyucoin for any query realted to bitcoin - Call us @ +918979293529" />
 		<meta name="keywords" content="Buyucoin, buy bitcoin online" />
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
+		<script src="../static/js/jquery.min.js"></script>
+		<script src="../static/js/skel.min.js"></script>
+		<script src="../static/js/skel-layers.min.js"></script>
+		<script src="../static/js/init.js"></script>
+		<link rel="stylesheet" href=/static/css/skel.css" />
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<link rel="stylesheet" href="/static/css/style-xlarge.css" />
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -30,19 +28,29 @@
 	<body id="top">
 <p>&nbsp;</p>
 <!-- Header --><header id="header" class="skel-layers-fixed">
-<h1><a href="index.html"><img src="images/logo.png" alt="BuyUcoin | Easiest way to buy bitcoin online" width="200px" height="40px" /></a></h1>
-<div class="alpha2"><img src="images/price.png" alt="Bitcoin current price , Bitcoin current price in inr , Btc/inr , 1 bitcoin is equal to how many indian rupees" width="150px" height="40px" /></div>
+<h1><a href="{{url_for('main.index')}}"><img src="../static/images/logo.png" alt="BuyUcoin | Easiest way to buy bitcoin online" width="200px" height="40px" /></a></h1>
+<div class="alpha2"><img src="../static/images/price.png" alt="Bitcoin current price , Bitcoin current price in inr , Btc/inr , 1 bitcoin is equal to how many indian rupees" width="150px" height="40px" /></div>
 <nav id="nav">
 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="howitwork.html">How to Buy</a></li>
-<li><a href="contactus.html">Contact Us</a></li>
-<li><a href="purchaseid.html">Get Purchase ID</a></li>
-<li><a class="button special" href="buybitcoin.html">Buy Bitcoins Now</a></li>
+<li><a itemprop="url" href="{{url_for('main.index')}}">Home</a></li>
+
+<li><a href="{{url_for('main.bitcoin_mining_india')}}">Bitcoin Mining</a></li>
+<li><a href="{{url_for('main.howitwork')}}">How to Buy</a></li>
+<li><a href="{{url_for('main.contactus')}}">Contact Us</a></li>
+<li><a href="{{url_for('main.purchaseid')}}">Get Purchase ID</a></li>
+<li><a class="button special" href="{{url_for('main.buybitcoin')}}">Buy Bitcoins Now</a></li>
 </ul>
 </nav></header><!-- Main -->
 <section id="main" class="wrapper style1">
-<div class="container"><img src="images/thank.gif" alt="Buyucoin easiest way to buy bitcoin online in India" align="middle" /></div>
+<div class="container"><img src="../static/images/thank.gif" alt="Buyucoin easiest way to buy bitcoin online in India" align="middle" /></div>
+{% for i in data %}
+{{i.name}}
+<br>
+{{i.email_id}}
+<br>
+{{i.mob_no}}
+{% endfor %}
+
 </section>
 <!-- Footer --><footer id="footer">
 <div class="container">
@@ -52,20 +60,20 @@
 <div class="6u">
 <h3>Quick links</h3>
 <ul class="alt">
-<li><a href="buybitcoin.html">Buy Bitcoins</a></li>
-<li><a href="purchaseid.html">Get Purchase ID</a></li>
-<li><a href="faq.html">FAQ</a></li>
-<li><a href="howitwork.html">How to buy</a></li>
-<li><a href="bitcoinwallet.html">Get bitcoin wallet</a></li>
+<li><a href="{{url_for('main.buybitcoin')}}">Buy Bitcoins</a></li>
+<li><a href="{{url_for('main.purchaseid')}}">Get Purchase ID</a></li>
+<li><a href="{{url_for('main.faq')}}">FAQ</a></li>
+<li><a href="{{url_for('main.howitwork')}}">How to buy</a></li>
+<li><a href="{{url_for('main.bitcoinwallet')}}">Get bitcoin wallet</a></li>
 </ul>
 </div>
 <div class="6u">
 <h3>Other links</h3>
 <ul class="alt">
-<li><a href="terms.html">Terms and Conditions</a></li>
-<li><a href="bitcoingraph.html">Bitcoin price graph</a></li>
+<li><a href="{{url_for('main.terms')}}">Terms and Conditions</a></li>
+<li><a href="{{url_for('main.bitcoingraph')}}">Bitcoin price graph</a></li>
 <li><a href="http://historyofbitcoin.org/">Bitcoin Timeline</a></li>
-<li><a href="contactus.html">Contact US</a></li>
+<li><a href="{{url_for('main.contactus')}}">Contact US</a></li>
 </ul>
 </div>
 </div>

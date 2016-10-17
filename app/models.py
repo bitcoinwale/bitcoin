@@ -19,6 +19,7 @@ class Contact(db.Model):
     __tablename__ = 'Queries'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), nullable=False)
-    email_id = db.Column(db.String(64), unique=True, nullable=False)
-    mob_no = db.Column(db.String(10), unique=True, nullable=False)
-    query = db.Column(db.String())
+    email_id = db.Column(db.String(64), nullable=False)
+    mob_no = db.Column(db.String(10), nullable=False)
+    ques = db.Column(db.String(160), nullable=False)
+    description = db.Column(db.Text())

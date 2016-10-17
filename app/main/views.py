@@ -1,8 +1,9 @@
 from flask import render_template, session, redirect, url_for, request
 from ..main import main
 import json
-from .forms import MainForm
-from ..models import User
+from .forms import QueryForm
+from ..auth.forms import MainForm
+from ..models import User, Contact
 from app import db
 import time
 
@@ -33,9 +34,35 @@ def contactus():
     return render_template('contactus.html')
 
 
-@main.route('/query/form')
+@main.route('/query/form', methods=['GET', 'POST'])
 def contact_form():
-    return render_template('')
+    form = QueryForm()
+    if request.method == 'GET':
+        return render_template('query_form.html', form=form)
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            c = Contact()
+            c.email_id = form.email.data
+            c.mob_no = form.number.data
+            c.name = form.name.data
+            c.ques = form.query.data
+            c.description = form.description.data
+            db.session.add(c)
+            db.session.commit()
+            return redirect(url_for('main.thank'))
+        else:
+            print(form.errors)
+            return redirect(url_for('main.contact_form'))
+
+
+@main.route('/thankyou')
+def thank():
+    x = Contact.query.all()
+    if x:
+        return render_template('thank.html', data=x)
+    else:
+        return render_template('thank.html')
+
 
 
 @main.route('/howitwork')
@@ -99,7 +126,6 @@ def base():
     if request.method == 'GET':
         return render_template('extends.html', form=form)
     if request.method == 'POST':
-        print(form.errors)
         if form.is_submitted():
             print("submitted")
         if form.validate():
@@ -118,6 +144,7 @@ def base():
             u = User.query.all()
             return render_template('extends2.html', u=u)
         else:
+            print(form.errors)
             print('something is wrong')
 
 
