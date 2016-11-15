@@ -1,0 +1,11 @@
+Dear {{ user.username }},
+
+We have recieved your query.
+
+We will contact you within 24 hour
+
+Alternatively, you can contact us on our customer care no.
+
+Sincerely,
+
+The BuyUcoin Team

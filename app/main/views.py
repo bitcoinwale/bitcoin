@@ -1,11 +1,12 @@
-from flask import render_template, session, redirect, url_for, request
+from flask import render_template, session, redirect, url_for, request, flash
 from ..main import main
 import json
 from .forms import QueryForm
-from ..auth.forms import MainForm
-from ..models import User, Contact
+from ..auth.forms import RegistrationForm
+from ..models import User, Contact, Values
 from app import db
-import time
+from datetime import datetime
+from urllib.request import urlopen
 
 
 @main.route('/', methods=['GET', 'POST'])
@@ -25,7 +26,7 @@ def purchaseid():
 
 @main.route('/purchase/form')
 def purchase_form():
-    form = MainForm()
+    form = RegistrationForm()
     return render_template('sign_up_form.html', form=form)
 
 
@@ -42,27 +43,30 @@ def contact_form():
     if request.method == 'POST':
         if form.validate_on_submit():
             c = Contact()
-            c.email_id = form.email.data
-            c.mob_no = form.number.data
+            c.email = form.email.data
+            c.mob = form.number.data
             c.name = form.name.data
             c.ques = form.query.data
             c.description = form.description.data
+            c.timestamp = datetime.now()
             db.session.add(c)
             db.session.commit()
-            return redirect(url_for('main.thank'))
+            return redirect(url_for('main.thank', type='1', id=c.id))
         else:
             print(form.errors)
+            for i in form.errors:
+                flash(i)
             return redirect(url_for('main.contact_form'))
 
 
 @main.route('/thankyou')
 def thank():
-    x = Contact.query.all()
-    if x:
-        return render_template('thank.html', data=x)
-    else:
-        return render_template('thank.html')
-
+    type = request.args.get('type')
+    if type == '1':
+        user = Contact.query.get(request.args.get('id'))
+        print(user.name)
+        return render_template('thank.html', id=user)
+    return render_template('thank.html')
 
 
 @main.route('/howitwork')
@@ -122,9 +126,9 @@ def notfound():
 
 @main.route('/base', methods=['GET', 'POST'])
 def base():
-    form = MainForm()
+    form = RegistrationForm()
     if request.method == 'GET':
-        return render_template('extends.html', form=form)
+        return render_template('base1.html')
     if request.method == 'POST':
         if form.is_submitted():
             print("submitted")
@@ -138,16 +142,36 @@ def base():
             u.complete_registration = False
             u.gender = form.gender.data
             u.pincode = form.pincode.data
-            u.timestamp = time.time()
+            u.timestamp = datetime.now()
             db.session.add(u)
-            #db.session.commit()
+            db.session.commit()
             u = User.query.all()
             return render_template('extends2.html', u=u)
         else:
             print(form.errors)
-            print('something is wrong')
+            for i in form.errors:
+                flash(i)
 
 
+@main.context_processor         # to add variables in template scope
+def include_template_variables():
+    return {'Permission': 'adf'}
+    pass
+
+
+@main.route('/api')
 def bitcoin_value():
     url = "http://api.coindesk.com/v1/bpi/currentprice.json"
-    json.loads(url)
+    url = urlopen(url)
+    url = url.read().decode("utf-8")
+    data = json.loads(url)
+    return data
+
+
+@main.route('/api/current.json')
+def api():
+    latest = Values.query.all()[-1]
+
+    values = {'time': str(latest.timestamp) + ' UTC+05:30',
+              'rates': {'bid': latest.bid, 'ask': latest.ask}}
+    return json.dumps(values)

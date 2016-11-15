@@ -1,19 +1,28 @@
-from flask import Flask, redirect, url_for, request
+from flask import Flask, request, redirect, url_for, render_template, flash
+
+from shell_app import auth
+
 app = Flask(__name__)
-
-@app.route('/admin')
-def hello_admin():
-   return 'Hello Admin'
-
-@app.route('/guest')
-def hello_guest():
-   print(request.args)
-   return 'Hello %s as Guest'
-
-@app.route('/user/')
-def hello_user():
-   return redirect(url_for('hello_guest', guest='devesh'))
+app.config['SECRET_KEY'] = 'qweradfvartaeefvadfgtadfvcbsrt'
+app.register_blueprint(auth)
 
 
-if __name__ == '__main__':
-   app.run(debug = True)
+@app.context_processor
+def include_template_variables():
+    return {'permission': 'adf'}
+
+
+@app.route('/')
+def index():
+    print(request.endpoint)
+    flash('something is wrong')
+    return render_template('base1.html')
+
+
+@app.route('/hello')
+def hello():
+    print(request.endpoint)
+    return redirect(url_for('index'))
+
+app.debug = True
+app.run()

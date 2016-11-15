@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}BuyUcoin - Login{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Login</h1>
+</div>
+<div class="col-md-4">
+
+    <form action="{{url_for('auth.login')}}" method='POST' enctype='multipart/form-data'>
+		{{ form.csrf_token }}
+
+        <h5>{{ form.email.label() }}</h5>
+            {{ form.email() }}
+        <h5>{{ form.email.label() }}</h5>
+            {{ form.password() }}
+            {{ form.remember_me() }}
+        <h5>{{ form.remember_me.label() }}</h5>
+            {{ form.submit() }}
+    </form>
+    <br>
+    <p>Forgot your password? <a href="{{ url_for('auth.password_reset_request') }}">Click here to reset it</a>.</p>
+    <p>New user? <a href="{{ url_for('auth.register') }}">Click here to register</a>.</p>
+</div>
+{% endblock %}

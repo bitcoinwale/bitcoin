@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file:///mnt/ANONYMOUS/WORK/Python/Main/Algorithms/Backtracking/.idea/Backtracking.iml" filepath="/mnt/ANONYMOUS/WORK/Python/Main/Algorithms/Backtracking/.idea/Backtracking.iml" />
+      <module fileurl="file:///mnt/ANONYMOUS/WORK/Python/Main/Ongoing/.idea/Ongoing.iml" filepath="/mnt/ANONYMOUS/WORK/Python/Main/Ongoing/.idea/Ongoing.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/buyucoin.iml" filepath="$PROJECT_DIR$/.idea/buyucoin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../waasle/.idea/waasle.iml" filepath="$PROJECT_DIR$/../waasle/.idea/waasle.iml" />
     </modules>
   </component>
 </project>

@@ -1,98 +1,16 @@
-<!DOCTYPE HTML>
+{% extends 'base.html' %}
 
-<html>
-	<head>
-		<title>Thank You | Buyucoin easiest way to buy bitcoin online.</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="Contact buyucoin for any query realted to bitcoin - Call us @ +918979293529" />
-		<meta name="keywords" content="Buyucoin, buy bitcoin online" />
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="../static/js/jquery.min.js"></script>
-		<script src="../static/js/skel.min.js"></script>
-		<script src="../static/js/skel-layers.min.js"></script>
-		<script src="../static/js/init.js"></script>
-		<link rel="stylesheet" href=/static/css/skel.css" />
-		<link rel="stylesheet" href="/static/css/style.css" />
-		<link rel="stylesheet" href="/static/css/style-xlarge.css" />
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+{% block title %}
+Thank You | Buyucoin easiest way to buy bitcoin online.{% endblock %}
 
-  ga('create', 'UA-80185592-1', 'auto');
-  ga('send', 'pageview');
+{% block content %}
 
-</script>
-	</head>
-	<body id="top">
 <p>&nbsp;</p>
-<!-- Header --><header id="header" class="skel-layers-fixed">
-<h1><a href="{{url_for('main.index')}}"><img src="../static/images/logo.png" alt="BuyUcoin | Easiest way to buy bitcoin online" width="200px" height="40px" /></a></h1>
-<div class="alpha2"><img src="../static/images/price.png" alt="Bitcoin current price , Bitcoin current price in inr , Btc/inr , 1 bitcoin is equal to how many indian rupees" width="150px" height="40px" /></div>
-<nav id="nav">
-<ul>
-<li><a itemprop="url" href="{{url_for('main.index')}}">Home</a></li>
-
-<li><a href="{{url_for('main.bitcoin_mining_india')}}">Bitcoin Mining</a></li>
-<li><a href="{{url_for('main.howitwork')}}">How to Buy</a></li>
-<li><a href="{{url_for('main.contactus')}}">Contact Us</a></li>
-<li><a href="{{url_for('main.purchaseid')}}">Get Purchase ID</a></li>
-<li><a class="button special" href="{{url_for('main.buybitcoin')}}">Buy Bitcoins Now</a></li>
-</ul>
-</nav></header><!-- Main -->
+<!-- Main -->
 <section id="main" class="wrapper style1">
 <div class="container"><img src="../static/images/thank.gif" alt="Buyucoin easiest way to buy bitcoin online in India" align="middle" /></div>
-{% for i in data %}
-{{i.name}}
-<br>
-{{i.email_id}}
-<br>
-{{i.mob_no}}
-{% endfor %}
+    <br>
+    {{ Thankyou for submiting your query. We will try to get back you you as soon as possible. }}
 
 </section>
-<!-- Footer --><footer id="footer">
-<div class="container">
-<div class="row double">
-<div class="6u">
-<div class="row collapse-at-2">
-<div class="6u">
-<h3>Quick links</h3>
-<ul class="alt">
-<li><a href="{{url_for('main.buybitcoin')}}">Buy Bitcoins</a></li>
-<li><a href="{{url_for('main.purchaseid')}}">Get Purchase ID</a></li>
-<li><a href="{{url_for('main.faq')}}">FAQ</a></li>
-<li><a href="{{url_for('main.howitwork')}}">How to buy</a></li>
-<li><a href="{{url_for('main.bitcoinwallet')}}">Get bitcoin wallet</a></li>
-</ul>
-</div>
-<div class="6u">
-<h3>Other links</h3>
-<ul class="alt">
-<li><a href="{{url_for('main.terms')}}">Terms and Conditions</a></li>
-<li><a href="{{url_for('main.bitcoingraph')}}">Bitcoin price graph</a></li>
-<li><a href="http://historyofbitcoin.org/">Bitcoin Timeline</a></li>
-<li><a href="{{url_for('main.contactus')}}">Contact US</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="6u">
-<h2>About Us</h2>
-<p>BuyUcoin is a company which provides you the easiest way to buy bitcoin online in India through credit card, debit card, Net banking. It is the first company to provide this payment method to buy bitcoin in India. We have made buying bitcoin easy.</p>
-<ul class="icons">
-<li><a href="https://twitter.com/buyucoin"><img src="images/t.PNG" alt="" width="50px" height="40px" /></a></li>
-<li><a href="https://www.facebook.com/BuyUcoin"><img src="images/f.PNG" alt="" width="50px" height="40px" /></a></li>
-</ul>
-</div>
-</div>
-<ul class="copyright">
-<li>&copy; BuyUcoin. All rights reserved.</li>
-<li>Call us: +918979293529</li>
-<li>Mail us: buyucoin@gmail.com</li>
-</ul>
-</div>
-</footer>
-</body>
-</html>
+{% endblock %}
