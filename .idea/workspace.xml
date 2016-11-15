@@ -1,59 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b43eef08-85a0-43e2-aa3e-be0b4e7e64d0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/emails.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/Base.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/buyucoin.iml" afterPath="$PROJECT_DIR$/.idea/buyucoin.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/__init__.py" afterPath="$PROJECT_DIR$/app/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/auth/__init__.py" afterPath="$PROJECT_DIR$/app/auth/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/auth/errors.py" afterPath="$PROJECT_DIR$/app/auth/errors.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/auth/forms.py" afterPath="$PROJECT_DIR$/app/auth/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/auth/views.py" afterPath="$PROJECT_DIR$/app/auth/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config.py" afterPath="$PROJECT_DIR$/app/config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main/forms.py" afterPath="$PROJECT_DIR$/app/main/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main/views.py" afterPath="$PROJECT_DIR$/app/main/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models.py" afterPath="$PROJECT_DIR$/app/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/404.html" afterPath="$PROJECT_DIR$/app/templates/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/about.html" afterPath="$PROJECT_DIR$/app/templates/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/bitcoin-mining-india.html" afterPath="$PROJECT_DIR$/app/templates/bitcoin-mining-india.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/bitcoingraph.html" afterPath="$PROJECT_DIR$/app/templates/bitcoingraph.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/bitcoinhalving.html" afterPath="$PROJECT_DIR$/app/templates/bitcoinhalving.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/bitcoinwallet.html" afterPath="$PROJECT_DIR$/app/templates/bitcoinwallet.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/bitinvest.html" afterPath="$PROJECT_DIR$/app/templates/bitinvest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/buybitcoin.html" afterPath="$PROJECT_DIR$/app/templates/buybitcoin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/buyucoin-gallery.html" afterPath="$PROJECT_DIR$/app/templates/buyucoin-gallery.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/contactus.html" afterPath="$PROJECT_DIR$/app/templates/contactus.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/extends.html" afterPath="$PROJECT_DIR$/app/templates/extends.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/extends2.html" afterPath="$PROJECT_DIR$/app/templates/extends2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/faq.html" afterPath="$PROJECT_DIR$/app/templates/faq.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/helpingguide1.html" afterPath="$PROJECT_DIR$/app/templates/helpingguide1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/howbitcoinwork.html" afterPath="$PROJECT_DIR$/app/templates/howbitcoinwork.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/howitwork.html" afterPath="$PROJECT_DIR$/app/templates/howitwork.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/index.html" afterPath="$PROJECT_DIR$/app/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/purchaseid.html" afterPath="$PROJECT_DIR$/app/templates/purchaseid.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/query_form.html" afterPath="$PROJECT_DIR$/app/templates/query_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/terms.html" afterPath="$PROJECT_DIR$/app/templates/terms.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/thank.html" afterPath="$PROJECT_DIR$/app/templates/thank.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrations/alembic.ini" afterPath="$PROJECT_DIR$/migrations/alembic.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrations/versions/02f4202766df_.py" afterPath="$PROJECT_DIR$/migrations/versions/02f4202766df_.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrations/versions/350d71b917aa_.py" afterPath="$PROJECT_DIR$/migrations/versions/350d71b917aa_.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrations/versions/50589f022c12_.py" afterPath="$PROJECT_DIR$/migrations/versions/50589f022c12_.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrations/versions/5f708a0dfb02_.py" afterPath="$PROJECT_DIR$/migrations/versions/5f708a0dfb02_.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrations/versions/6546586bd21b_.py" afterPath="$PROJECT_DIR$/migrations/versions/6546586bd21b_.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrations/versions/6dbfa40bbf09_.py" afterPath="$PROJECT_DIR$/migrations/versions/6dbfa40bbf09_.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrations/versions/7adc828b6c7c_.py" afterPath="$PROJECT_DIR$/migrations/versions/7adc828b6c7c_.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrations/versions/a96c1aed2e8a_.py" afterPath="$PROJECT_DIR$/migrations/versions/a96c1aed2e8a_.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrations/versions/b647ea596827_.py" afterPath="$PROJECT_DIR$/migrations/versions/b647ea596827_.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrations/versions/be9fcda36ada_.py" afterPath="$PROJECT_DIR$/migrations/versions/be9fcda36ada_.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrations/versions/da5a8b566ade_.py" afterPath="$PROJECT_DIR$/migrations/versions/da5a8b566ade_.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirments.txt" afterPath="$PROJECT_DIR$/requirments.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shell.py" afterPath="$PROJECT_DIR$/shell.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shell_app.py" afterPath="$PROJECT_DIR$/shell_app.py" />
-    </list>
+    <list default="true" id="b43eef08-85a0-43e2-aa3e-be0b4e7e64d0" name="Default" comment="" />
     <ignored path="buyucoin.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,13 +21,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
               <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <element signature="e#0#77#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -574,13 +534,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/templates/sign_up_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2852">
-          <caret line="262" column="48" selection-start-line="262" selection-start-column="48" selection-end-line="262" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../waasle/app/static/css/memenu.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="943">
@@ -936,6 +889,16 @@
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#0#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
